@@ -1,0 +1,56 @@
+
+(in-microtheory EscapeMt)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(preconditionForMethod
+      (and
+	(accessible ?obj)
+	(isa ?obj keyOfLock))    
+(methodForAction
+  (fetch ?obj)
+  (actionSequence
+   (TheList
+    (doAgentPlan
+     (escape ?obj))
+))))
+
+(preconditionForMethod
+      (and
+	(notAccessible ?obj)
+	(isa ?obj keyOfLock)
+	(inContainer ?obj ?container))            
+ (methodForAction
+  (fetch ?obj)
+  (actionSequence
+   (TheList
+    (doAgentPlan
+     (breakContainer ?container ?poundTool))
+    ))))
+
+(preconditionForMethod
+      (and
+	(isa ?container Container)
+	(isa ?poundTool PoundingDrivingImplement)
+	(accessible ?container)
+	(accessible ?poundTool)
+	(inContainer ?obj ?container))            
+ (methodForAction
+     (breakContainer ?container ?poundTool)
+  (actionSequence
+   (TheList
+	(doRecord (ist-Information MyEscapePlanMt (breakContainer ?container ?poundTool)))
+	(doRecord (ist-Information EscapeFactsMt (onTable ?obj)))   
+   (doAgentPlan
+     (fetch ?obj))
+    ))))
+
+
+(preconditionForMethod
+      (and (true))            
+ (methodForAction
+     (escape ?obj)
+  (actionSequence
+   (TheList
+    (doRecord (ist-Information MyEscapePlanMt (escape ?obj)))
+    ))))

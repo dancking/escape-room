@@ -1,0 +1,8 @@
+
+(in-microtheory L1Mt)
+(genlMt EscapeMt L1Mt)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(onTable K1)
+(isa K1 keyOfLock)

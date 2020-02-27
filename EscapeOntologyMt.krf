@@ -1,0 +1,33 @@
+
+(in-microtheory EscapeOntologyMt)
+(genlMt EscapeMt EscapeOntologyMt)
+(genlMt Session-ReasonerPlanMt EscapeMt)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;Ontology
+
+(isa escape ComplexActionPredicate)
+(arity escape 1)
+
+(isa escapeFail ComplexActionPredicate)
+(arity escapeFail 1)
+
+(isa fetch ComplexActionPredicate)
+(arity fetchKey 1)
+
+(isa onTable Predicate)
+(arity onTable 1)
+
+(isa accessible Predicate)
+(arity accessible 1)
+
+
+;;;Horn Clauses
+
+(<== (accessible ?obj)
+     (onTable ?obj))
+
+(<== (notAccessible ?obj)
+	(uninferredSentence(accessible ?obj))
+)
