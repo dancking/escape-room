@@ -7,13 +7,13 @@
       (and
 	(accessible ?obj)
 	(isa ?obj keyOfLock))    
-(methodForAction
+ (methodForAction
   (fetch ?obj)
   (actionSequence
    (TheList
     (doAgentPlan
      (escape ?obj))
-))))
+    ))))
 
 (preconditionForMethod
       (and
@@ -40,7 +40,7 @@
   (actionSequence
    (TheList
 	(doRecord (ist-Information MyEscapePlanMt (breakContainer ?container ?poundTool)))
-	(doRecord (ist-Information EscapeFactsMt (onTable ?obj)))   
+	(doRecord (ist-Information LevelTwoMt (onTable ?obj)))   
    (doAgentPlan
      (fetch ?obj))
     ))))

@@ -14,19 +14,25 @@
 (arity escapeFail 1)
 
 (isa fetch ComplexActionPredicate)
-(arity fetchKey 1)
+(arity fetch 1)
+
+(isa breakContainer ComplexActionPredicate)
+(arity breakContainer 2)
 
 (isa onTable Predicate)
 (arity onTable 1)
 
+(isa inContainer Predicate)
+(arity inContainer 2)
+
 (isa accessible Predicate)
 (arity accessible 1)
 
-
-;;;Horn Clauses
+(isa notAccessible Predicate)
+(arity notAccessible 1)
 
 (<== (accessible ?obj)
-     (onTable ?obj))
+	(onTable ?obj))
 
 (<== (notAccessible ?obj)
 	(uninferredSentence(accessible ?obj))

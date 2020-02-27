@@ -1,13 +1,13 @@
 
-(in-microtheory L2Mt)
-(genlMt EscapeMt L2Mt)
+(in-microtheory LevelTwoMt)
+(genlMt EscapeMt LevelTwoMt)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(inContainer Key1 Jar1)
+(inContainer Key1 Box1)
 (onTable Hammer1)
-(onTable Jar1)
+(onTable Box1)
 
 (isa Key1 keyOfLock)
 (isa Hammer1 PoundingDrivingImplement)
-(isa Jar1 Container)
+(isa Box1 Container)
